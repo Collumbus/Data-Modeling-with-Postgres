@@ -1,2 +1,4 @@
 # Data-Modeling-with-Postgres
-This is a project, where I applied concepts of data modeling with Postgres and build an ETL pipeline using Python. To complete the project has been defined fact and dimension tables for a star schema for a particular analytic focus, and wrote an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL. 
+This project arose out of the need for a startup (fictional company) to analyze the data they collect from music and user activity in their new music streaming app.
+
+The company's data is stored in JSON files which makes it difficult to analyze via queries. So, a data modeling composed of a Postgres database and an ETL pipeline via Python was proposed, which will allow the analytics team to carry out their analysis. 
