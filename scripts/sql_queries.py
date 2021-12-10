@@ -10,12 +10,12 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays(
-        songplay_id SERIAL PRIMARY KEY,                     -- Sets primary key serially
-        start_time TIMESTAMP REFERENCES time (start_time),  -- Sets the foreign key related to the time table
-        user_id INT REFERENCES users (user_id),             -- Sets the foreign key related to the users table
+        songplay_id SERIAL PRIMARY KEY,                              
+        start_time TIMESTAMP NOT NULL REFERENCES time (start_time),  
+        user_id INT NOT NULL REFERENCES users (user_id),             
         level VARCHAR,
-        song_id VARCHAR REFERENCES songs (song_id),         -- Sets the foreign key related to the songs table 
-        artist_id VARCHAR REFERENCES artists (artist_id),   -- Sets the foreign key related to the artists table 
+        song_id VARCHAR  REFERENCES songs (song_id),          
+        artist_id VARCHAR  REFERENCES artists (artist_id),    
         session_id INT, 
         location TEXT, 
         user_agent TEXT)
@@ -23,7 +23,7 @@ songplay_table_create = ("""
 
 user_table_create = ("""
     CREATE TABLE IF NOT EXISTS users (
-        user_id INT PRIMARY KEY,                            -- Sets primary key
+        user_id INT NOT NULL PRIMARY KEY,                    
         first_name VARCHAR,
         last_name VARCHAR,
         gender CHAR(1),
@@ -32,16 +32,16 @@ user_table_create = ("""
 
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
-        song_id VARCHAR PRIMARY KEY,                        -- Sets primary key
+        song_id VARCHAR  PRIMARY KEY,                        
         title VARCHAR,
-        artist_id VARCHAR REFERENCES artists (artist_id),   -- Sets the foreign key related to the artists table
+        artist_id VARCHAR  REFERENCES artists (artist_id),   
         year INT,
         duration FLOAT)
 """)
 
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists (
-        artist_id VARCHAR PRIMARY KEY,                        -- Sets primary key,
+        artist_id VARCHAR  PRIMARY KEY,                      
         name VARCHAR,
         location TEXT,
         latitude FLOAT,
@@ -50,7 +50,7 @@ artist_table_create = ("""
 
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time (
-        start_time TIMESTAMP PRIMARY KEY,
+        start_time TIMESTAMP NOT NULL PRIMARY KEY,           
         hour INT,
         day INT,
         week INT,
