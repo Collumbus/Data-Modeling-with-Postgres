@@ -11,11 +11,11 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays(
         songplay_id SERIAL PRIMARY KEY,                     -- Sets primary key serially
-        start_time TIMESTAMP REFERENCES time (start_time),  -- Sets the foreign key related to table time
-        user_id INT REFERENCES users (user_id),             -- Sets the foreign key related to table users
+        start_time TIMESTAMP REFERENCES time (start_time),  -- Sets the foreign key related to the time table
+        user_id INT REFERENCES users (user_id),             -- Sets the foreign key related to the users table
         level VARCHAR,
-        song_id VARCHAR REFERENCES songs (song_id),         -- Sets the foreign key related to table songs
-        artist_id VARCHAR REFERENCES artists (artist_id),   -- Sets the foreign key related to table artists
+        song_id VARCHAR REFERENCES songs (song_id),         -- Sets the foreign key related to the songs table 
+        artist_id VARCHAR REFERENCES artists (artist_id),   -- Sets the foreign key related to the artists table 
         session_id INT, 
         location TEXT, 
         user_agent TEXT)
@@ -34,7 +34,7 @@ song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
         song_id VARCHAR PRIMARY KEY,                        -- Sets primary key
         title VARCHAR,
-        artist_id VARCHAR REFERENCES artists (artist_id),   -- Sets the foreign key related to table artists
+        artist_id VARCHAR REFERENCES artists (artist_id),   -- Sets the foreign key related to the artists table
         year INT,
         duration FLOAT)
 """)
