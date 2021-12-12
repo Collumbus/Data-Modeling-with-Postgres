@@ -135,7 +135,7 @@ time
 	- year
 	- weekday
 ```
-##Implementing the project...
+## Implementing the project...
 Initially, we have to create database and tables in postgres:
 * For this, the creation and drop statements of each table were written in the [sql_queries.py](https://github.com/Collumbus/Data-Modeling-with-Postgres/blob/main/scripts/sql_queries.py) file. Drop statements are needed so that we can delete everything and run the project more than once (for test purpose).
 
