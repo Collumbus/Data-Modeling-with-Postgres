@@ -1,7 +1,7 @@
 # Data-Modeling-with-Postgres
 This project arose from the need for a startup (a fictitious company) to analyze the data collected from music and user activity in its new music streaming app. 
 
-The company's data is stored in JSON files which makes it difficult to analyze by queries. So, a data modelling composed of a Postgres database and an ETL pipeline by Python was proposed, which will allow the analytics team to carry out their analysis. 
+The company's data is stored in JSON files, which makes it hard to analyze by queries. So, a data modelling composed of a Postgres database and an ETL pipeline by Python was proposed, which will allow the analytics team to carry out their analysis. 
 
 ## Datasets
 In the Song Dataset each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
